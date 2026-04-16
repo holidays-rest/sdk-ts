@@ -4,6 +4,8 @@ export type {
   ClientOptions,
   Country,
   Holiday,
+  HolidayDay,
+  HolidayName,
   HolidaysParams,
   Language,
   Subdivision,

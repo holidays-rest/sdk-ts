@@ -1,5 +1,7 @@
 # holidays.rest TypeScript SDK
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/32fc7ef7bedd4819a7b34a6ec409888d)](https://app.codacy.com/gh/holidays-rest/sdk-ts/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 Official TypeScript SDK for the [holidays.rest](https://holidays.rest) API.
 
 ## Requirements
@@ -22,7 +24,7 @@ import { HolidaysClient } from "holidays.rest";
 const client = new HolidaysClient({ apiKey: "YOUR_API_KEY" });
 
 const holidays = await client.getHolidays({ country: "US", year: 2024 });
-holidays.forEach((h) => console.log(`${h.date} — ${h.name}`));
+holidays.forEach((h) => console.log(`${h.date} — ${h.name.en}`));
 ```
 
 Get an API key at [holidays.rest/dashboard](https://www.holidays.rest/dashboard).
@@ -116,6 +118,8 @@ All request and response types are exported:
 ```ts
 import type {
   Holiday,
+  HolidayDay,
+  HolidayName,
   Country,
   Subdivision,
   Language,
@@ -125,9 +129,27 @@ import type {
 ```
 
 ```ts
+interface HolidayName {
+  [lang: string]: string; // e.g. { en: "New Year's Day", de: "Neujahr" }
+}
+
+interface HolidayDay {
+  actual:   string; // weekday the holiday falls on, e.g. "Thursday"
+  observed: string; // weekday legally observed, e.g. "Monday"
+}
+
 interface Holiday {
-  name: string; date: string; type: string; country: string;
-  region?: string; religion?: string; language?: string;
+  country_code: string;   // ISO 3166 alpha-2, e.g. "DE"
+  country_name: string;   // e.g. "Germany"
+  date:         string;   // ISO 8601, e.g. "2026-01-01"
+  name:         HolidayName;
+  isNational:   boolean;
+  isReligious:  boolean;
+  isLocal:      boolean;
+  isEstimate:   boolean;
+  day:          HolidayDay;
+  religion:     string;   // e.g. "Christianity" or ""
+  regions:      string[]; // subdivision codes, e.g. ["BW", "BY"], or []
 }
 
 interface Country {
