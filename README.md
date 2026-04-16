@@ -1,8 +1,9 @@
 # holidays.rest TypeScript SDK
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/32fc7ef7bedd4819a7b34a6ec409888d)](https://app.codacy.com/gh/holidays-rest/sdk-ts/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/32fc7ef7bedd4819a7b34a6ec409888d)](https://app.codacy.com/gh/holidays-rest/sdk-ts/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 
-Official TypeScript SDK for the [holidays.rest](https://holidays.rest) API.
+Official TypeScript SDK for the [holidays.rest](https://www.holidays.rest) API.
 
 ## Requirements
 
