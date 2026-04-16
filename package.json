@@ -1,5 +1,5 @@
 {
-  "name": "holidays.rest",
+  "name": "@holidays-rest/sdk-ts",
   "version": "1.0.0",
   "description": "Official TypeScript SDK for the holidays.rest API",
   "type": "module",
