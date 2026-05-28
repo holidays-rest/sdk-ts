@@ -14,13 +14,15 @@ Official TypeScript SDK for the [holidays.rest](https://www.holidays.rest) API.
 ## Installation
 
 ```bash
-npm install holidays.rest
+npm i @holidays-rest/sdk-ts
+# or
+yarn add @holidays-rest/sdk-ts
 ```
 
 ## Quick Start
 
 ```ts
-import { HolidaysClient } from "holidays.rest";
+import { HolidaysClient } from "@holidays-rest/sdk-ts";
 
 const client = new HolidaysClient({ apiKey: "YOUR_API_KEY" });
 
@@ -126,7 +128,7 @@ import type {
   Language,
   HolidaysParams,
   ClientOptions,
-} from "holidays.rest";
+} from "@holidays-rest/sdk-ts";
 ```
 
 ```ts
@@ -168,7 +170,7 @@ interface Language    { code: string; name: string; }
 Non-2xx responses throw `HolidaysApiError`:
 
 ```ts
-import { HolidaysClient, HolidaysApiError } from "holidays.rest";
+import { HolidaysClient, HolidaysApiError } from "@holidays-rest/sdk-ts";
 
 try {
   await client.getHolidays({ country: "US", year: 2024 });
