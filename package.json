@@ -46,7 +46,7 @@
     "url": "https://github.com/holidays-rest/sdk-ts"
   },
   "devDependencies": {
-    "@vitest/coverage-v8": "^4.1.4",
+    "@vitest/coverage-v8": "^5.0.0",
     "tsup": "^8.0.0",
     "typescript": "^7.0.2",
     "vitest": "^4.1.4"
